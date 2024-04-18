@@ -1,23 +1,4 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Namespace
 metadata:
-  name: flask-minimal-app
-  namespace: flask-minimal-app
-spec:
-  selector:
-    matchLabels:
-      app: flask-minimal-app
-  template:
-    metadata:
-      labels:
-        app: flask-minimal-app
-    spec:
-      containers:
-      - name: flask-minimal-app
-        image: andrebrisolla/flask-minimal-app
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: 8080
+  name:  flask-minimal-app
