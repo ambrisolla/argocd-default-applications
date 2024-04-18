@@ -1,0 +1,11 @@
+apiVersion: "purelb.io/v1"
+kind: ServiceGroup
+metadata:
+  name: localaddrange
+  namespace: purelb
+spec:
+ local:
+    v4pools:
+    - aggregation: default
+      pool: 192.168.0.50-192.168.0.60
+      subnet: 192.168.0.0/24
