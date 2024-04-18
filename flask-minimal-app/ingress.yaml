@@ -15,7 +15,6 @@ spec:
             name: flask-minimal-app
             port:
               number: 8085
-            target_port: 8080  
         path: /api/v1/users
         pathType: Exact
       - backend:
@@ -23,7 +22,6 @@ spec:
             name: flask-minimal-app
             port:
               number: 8085
-            target_port: 8080  
         path: /api/v1/groups
         pathType: Exact
 status:
