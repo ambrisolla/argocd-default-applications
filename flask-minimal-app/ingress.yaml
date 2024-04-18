@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  generation: 1
+  name: flask-minimal-app
+  namespace: flask-minimal-app
+spec:
+  ingressClassName: kong
+  rules:
+  - host: k8s-brisa.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: flask-minimal-app
+            port:
+              number: 8085
+        path: /api/v1/users
+        pathType: Exact
+      - backend:
+          service:
+            name: flask-minimal-app
+            port:
+              number: 8085
+        path: /api/v1/groups
+        pathType: Exact
+status:
+  loadBalancer: {}
