@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    meta.helm.sh/release-name: purelb
+    meta.helm.sh/release-namespace: purelb
+  creationTimestamp: '2024-04-11T17:41:40Z'
+  labels:
+    app.kubernetes.io/instance: purelb
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: purelb
+    app.kubernetes.io/version: v0.8.0
+    helm.sh/chart: purelb-v0.8.0
+  name: allocator
+  namespace: purelb
+  resourceVersion: '16840'
+  uid: 5ed46d9f-af34-40c9-a6eb-98433e45eac1
