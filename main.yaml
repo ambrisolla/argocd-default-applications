@@ -13,7 +13,7 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/breeze-technology/argocd-default-applications.git
+    repoURL: https://github.com/ambrisolla/argocd-default-applications.git
     targetRevision: HEAD
     path: metallb
     directory:
@@ -34,7 +34,7 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/breeze-technology/argocd-default-applications.git
+    repoURL: https://github.com/ambrisolla/argocd-default-applications.git
     targetRevision: HEAD
     path: flask-minimal-app
     directory:
@@ -55,7 +55,7 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/breeze-technology/argocd-default-applications.git
+    repoURL: https://github.com/ambrisolla/argocd-default-applications.git
     targetRevision: HEAD
     path: argocd-ingress
     directory:
@@ -76,7 +76,7 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/breeze-technology/argocd-default-applications.git
+    repoURL: https://github.com/ambrisolla/argocd-default-applications.git
     targetRevision: HEAD
     path: traefik-ingress
     directory:
