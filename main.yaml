@@ -39,3 +39,24 @@ spec:
     path: flask-minimal-app
     directory:
       recurse: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traefik-ingress
+  namespace: argocd
+spec:
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/breeze-technology/argocd-default-applications.git
+    targetRevision: HEAD
+    path: traefik
+    directory:
+      recurse: true
