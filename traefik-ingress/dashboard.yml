@@ -11,5 +11,5 @@ spec:
     - match: Host(`traefik.brisa.io`)  # Domínio pelo qual o dashboard será acessado
       kind: Rule
       services:
-        - name: api@internal  # Referência interna ao serviço da API do Traefik
-          kind: TraefikService
+        - name: traefik
+          port: 80
