@@ -43,7 +43,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: traefik-ingress
+  name: argocd-ingress
   namespace: argocd
 spec:
   project: default
@@ -57,6 +57,6 @@ spec:
   source:
     repoURL: https://github.com/breeze-technology/argocd-default-applications.git
     targetRevision: HEAD
-    path: traefik
+    path: argocd-ingress
     directory:
       recurse: true
