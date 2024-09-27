@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-default-apps
+spec:
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  source:
+    repoURL: https://github.com/breeze-technology/argocd-default-applications.git
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  directory:
+    recurse: true
+  

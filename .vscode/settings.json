@@ -1,5 +1,0 @@
-{
-  "yaml.schemas": {
-    "https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/raw/master/pkg/agentcfg/agentcfg_schemas/ConfigurationFile.json": "file:///home/andre/kube-home/namespace.yaml"
-  }
-}
