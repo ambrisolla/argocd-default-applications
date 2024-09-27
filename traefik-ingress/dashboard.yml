@@ -3,13 +3,13 @@ apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
   name: traefik-dashboard
-  namespace: kube-system  # Namespace onde o Traefik está instalado, ajuste conforme necessário
+  namespace: traefik  # Namespace onde o Traefik está instalado, ajuste conforme necessário
 spec:
   entryPoints:
     - web  # Exponha no entrypoint HTTP (ajuste para websecure para HTTPS)
   routes:
-    - match: Host(`dashboard.traefik.local`)  # Domínio pelo qual o dashboard será acessado
+    - match: Host(`traefik.brisa.io`)  # Domínio pelo qual o dashboard será acessado
       kind: Rule
       services:
         - name: api@internal  # Referência interna ao serviço da API do Traefik
-          kind: TraefikService
+          kind: traefik
