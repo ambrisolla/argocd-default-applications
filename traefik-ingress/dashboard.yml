@@ -1,24 +1,15 @@
-apiVersion: traefik.io/v1alpha1
+---
+apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: traefik
-  namespace: argocd
+  name: traefik-dashboard
+  namespace: kube-system  # Namespace onde o Traefik está instalado, ajuste conforme necessário
 spec:
   entryPoints:
-    - websecure
+    - web  # Exponha no entrypoint HTTP (ajuste para websecure para HTTPS)
   routes:
-    - kind: Rule
-      match: Host(`traefik.brisa.io`)
-      priority: 10
+    - match: Host(`traefik.brisa.io`)  # Domínio pelo qual o dashboard será acessado
+      kind: Rule
       services:
-        - name: traefik
-          port: 80
-    - kind: Rule
-      match: Host(`traefik.brisa.io`) && Header(`Content-Type`, `application/grpc`)
-      priority: 11
-      services:
-        - name: traefik
-          port: 80
-          scheme: h2c
-  tls:
-    certResolver: default
+        - name: api@internal  # Referência interna ao serviço da API do Traefik
+          kind: traefik
