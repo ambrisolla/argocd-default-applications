@@ -8,12 +8,12 @@ spec:
     automated:
       prune: true
       selfHeal: true
-  source:
-    repoURL: https://github.com/breeze-technology/argocd-default-applications.git
   destination:
     namespace: default
     server: https://kubernetes.default.svc
-  directory:
-    recurse: true
-    exclude: main.yaml
+  source:
+    repoURL: https://github.com/breeze-technology/argocd-default-applications.git
+    directory:
+      recurse: true
+      exclude: main.yaml
   
