@@ -5,7 +5,7 @@ metadata:
   name: flask-minimal-app
   namespace: flask-minimal-app
 spec:
-  ingressClassName: kong
+  ingressClassName: traefik
   rules:
   - host: k8s-brisa.com
     http:
